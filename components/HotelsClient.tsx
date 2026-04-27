@@ -42,12 +42,12 @@ function Header() {
       <div className="inner header__inner">
         <div className="header__logo">
           <Image
-            src="/logo.png"
+            src="/logo-light.png"
             alt="Koko Global Hospitality"
-            width={52}
+            width={120}
             height={52}
+            style={{ width: 'auto', height: '52px' }}
             priority
-            style={{ mixBlendMode: 'screen' }}
           />
         </div>
         <nav className="header__nav">

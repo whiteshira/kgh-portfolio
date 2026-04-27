@@ -1,7 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { useState, useMemo, useCallback } from 'react'
-import { hotels, ALL_CITIES, Hotel, Country, Brand, Status } from '@/data/hotels'
+import { Hotel, ALL_CITIES } from '@/data/hotels'
+import type { Country, Brand, Status } from '@/data/hotels'
 
 // ── Icons ────────────────────────────────────────────────────
 function IconSearch() {
@@ -18,14 +20,6 @@ function IconGlobe() {
     <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
       <circle cx="8" cy="8" r="6.5" />
       <path d="M8 1.5C8 1.5 5.5 4.5 5.5 8s2.5 6.5 2.5 6.5M8 1.5c0 0 2.5 3 2.5 6.5S8 14.5 8 14.5M1.5 8h13" strokeLinecap="round" />
-    </svg>
-  )
-}
-
-function IconFacebook() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M16 8.05A8 8 0 1 0 6.75 16v-5.63H4.72V8.05h2.03V6.3c0-2 1.19-3.1 3-3.1.88 0 1.8.16 1.8.16v1.97h-1.01c-1 0-1.31.62-1.31 1.26v1.51h2.23l-.36 2.32H9.23V16A8 8 0 0 0 16 8.05z" />
     </svg>
   )
 }
@@ -47,11 +41,14 @@ function Header() {
     <header className="header">
       <div className="inner header__inner">
         <div className="header__logo">
-          <div className="header__logo-box">
-            <div className="header__logo-line1">Koko</div>
-            <div className="header__logo-line1">Global</div>
-            <div className="header__logo-line2">Hospitality</div>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Koko Global Hospitality"
+            width={52}
+            height={52}
+            priority
+            style={{ mixBlendMode: 'screen' }}
+          />
         </div>
         <nav className="header__nav">
           <a href="https://www.kokoglobalhospitality.com/" target="_blank" rel="noopener noreferrer">
@@ -64,8 +61,7 @@ function Header() {
 }
 
 // ── Hero ─────────────────────────────────────────────────────
-function Hero() {
-  const countries = 2
+function Hero({ total }: { total: number }) {
   const cities = ALL_CITIES.length
   return (
     <section className="hero">
@@ -78,11 +74,11 @@ function Hero() {
         </p>
         <div className="hero__stats">
           <div className="stat">
-            <span className="stat__num">{hotels.length}</span>
+            <span className="stat__num">{total}</span>
             <span className="stat__label">Properties</span>
           </div>
           <div className="stat">
-            <span className="stat__num">{countries}</span>
+            <span className="stat__num">2</span>
             <span className="stat__label">Countries</span>
           </div>
           <div className="stat">
@@ -109,7 +105,6 @@ function FilterBar({ filters, availableCities, count, onUpdate, onClear, hasActi
   return (
     <div className="filter-bar">
       <div className="inner filter-bar__inner">
-        {/* Country */}
         <div className="filter-row">
           <span className="filter-label">Country</span>
           {(['', 'Thailand', 'Philippines'] as (Country | '')[]).map((c) => (
@@ -123,7 +118,6 @@ function FilterBar({ filters, availableCities, count, onUpdate, onClear, hasActi
           ))}
         </div>
 
-        {/* Destination */}
         <div className="filter-row">
           <span className="filter-label">Destination</span>
           <button
@@ -143,7 +137,6 @@ function FilterBar({ filters, availableCities, count, onUpdate, onClear, hasActi
           ))}
         </div>
 
-        {/* Brand + Status + Search */}
         <div className="filter-row">
           <span className="filter-label">Brand</span>
           {(['', 'Kokotel', 'Independent'] as (Brand | '')[]).map((b) => (
@@ -195,10 +188,9 @@ function FilterBar({ filters, availableCities, count, onUpdate, onClear, hasActi
 
 // ── Hotel Card ───────────────────────────────────────────────
 function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
-  const cardClass = `card card--${hotel.locationType}`
   return (
     <div
-      className={cardClass}
+      className={`card card--${hotel.locationType}`}
       style={{ animationDelay: `${Math.min(index * 40, 400)}ms` }}
     >
       <div className="card__top">
@@ -225,17 +217,6 @@ function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
           >
             <IconGlobe />
             Website
-          </a>
-        )}
-        {hotel.facebook && (
-          <a
-            className="card__link"
-            href={hotel.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconFacebook />
-            Facebook
           </a>
         )}
       </div>
@@ -286,7 +267,7 @@ function Footer() {
 }
 
 // ── Page ─────────────────────────────────────────────────────
-export default function HotelsPage() {
+export default function HotelsClient({ hotels }: { hotels: Hotel[] }) {
   const [filters, setFilters] = useState<Filters>(INIT)
 
   const availableCities = useMemo(() => {
@@ -294,7 +275,7 @@ export default function HotelsPage() {
       ? hotels.filter((h) => h.country === filters.country)
       : hotels
     return [...new Set(src.map((h) => h.city))].sort()
-  }, [filters.country])
+  }, [hotels, filters.country])
 
   const filtered = useMemo(() => {
     const q = filters.search.toLowerCase().trim()
@@ -306,7 +287,7 @@ export default function HotelsPage() {
       if (q && !h.name.toLowerCase().includes(q) && !h.city.toLowerCase().includes(q)) return false
       return true
     })
-  }, [filters])
+  }, [hotels, filters])
 
   const updateFilter = useCallback((key: keyof Filters, value: string) => {
     setFilters((prev) => {
@@ -317,14 +298,14 @@ export default function HotelsPage() {
       }
       return next
     })
-  }, [])
+  }, [hotels])
 
   const hasActive = Object.values(filters).some(Boolean)
 
   return (
     <div className="page">
       <Header />
-      <Hero />
+      <Hero total={hotels.length} />
       <FilterBar
         filters={filters}
         availableCities={availableCities}

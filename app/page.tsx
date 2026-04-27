@@ -1,5 +1,9 @@
-import HotelsPage from '@/components/HotelsPage'
+import { getVisibleHotels } from '@/lib/data'
+import HotelsClient from '@/components/HotelsClient'
 
-export default function Page() {
-  return <HotelsPage />
+export const revalidate = 3600
+
+export default async function Page() {
+  const hotels = await getVisibleHotels()
+  return <HotelsClient hotels={hotels} />
 }

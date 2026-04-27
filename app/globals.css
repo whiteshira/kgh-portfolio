@@ -757,10 +757,93 @@ img { max-width: 100%; display: block; }
 
 .admin-row-error { display: block; font-size: 11px; color: #e05050; margin-top: 4px; }
 
+.admin-btn--add {
+  background: transparent;
+  border: 1px solid rgba(44,91,109,0.5);
+  color: var(--teal-light);
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s;
+}
+
+.admin-btn--add:hover { background: var(--teal); color: var(--white); }
+
+.add-hotel-wrap { display: flex; flex-direction: column; gap: 0; }
+
+.add-hotel-form {
+  margin-top: 16px;
+  border: 1px solid rgba(44,91,109,0.3);
+  background: rgba(44,91,109,0.06);
+  padding: 24px;
+  max-width: 860px;
+}
+
+.add-hotel-form__title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--beige);
+  margin-bottom: 20px;
+}
+
+.add-hotel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.add-hotel-field { display: flex; flex-direction: column; gap: 6px; }
+
+.add-hotel-field--full { grid-column: 1 / -1; }
+
+.add-hotel-field--visible {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add-hotel-field label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(251,248,242,0.4);
+}
+
+.add-hotel-field--visible label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgba(251,248,242,0.6);
+  cursor: pointer;
+}
+
+.add-hotel-field--visible input[type="checkbox"] {
+  width: 16px; height: 16px;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+
+.admin-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='rgba(251,248,242,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .admin-header { padding: 20px 16px; }
   .admin-section { padding: 24px 16px 0; }
   .admin-table th, .admin-table td { padding: 8px; }
   .admin-td-name { max-width: 160px; }
   .admin-input--url { min-width: 180px; }
+  .add-hotel-grid { grid-template-columns: 1fr; }
 }

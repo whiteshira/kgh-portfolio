@@ -32,4 +32,5 @@ create trigger hotels_updated_at
 
 -- Row-level security (public read, no public write)
 alter table hotels enable row level security;
+drop policy if exists "Public read visible hotels" on hotels;
 create policy "Public read visible hotels" on hotels for select using (visible = true);

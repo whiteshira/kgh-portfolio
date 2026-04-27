@@ -40,10 +40,32 @@ export async function updateHotel(
   updates: Partial<Pick<Hotel, 'website' | 'visible'>>
 ): Promise<{ ok: boolean; error?: string }> {
   if (!isSupabaseConfigured()) {
-    return { ok: false, error: 'Supabase not configured. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to your Vercel environment variables.' }
+    return { ok: false, error: 'Supabase not configured.' }
   }
   const sb = getSupabaseAdmin()!
   const { error } = await sb.from('hotels').update(updates).eq('id', id)
   if (error) return { ok: false, error: error.message }
   return { ok: true }
+}
+
+export type NewHotel = Pick<
+  Hotel,
+  'name' | 'city' | 'country' | 'brand' | 'locationType' | 'website' | 'facebook' | 'status' | 'visible'
+>
+
+export async function createHotel(
+  data: NewHotel
+): Promise<{ ok: boolean; hotel?: Hotel; error?: string }> {
+  if (!isSupabaseConfigured()) {
+    return { ok: false, error: 'Supabase not configured.' }
+  }
+  const sb = getSupabaseAdmin()!
+  const id = `hotel-${Date.now()}`
+  const { data: created, error } = await sb
+    .from('hotels')
+    .insert({ id, ...data, location_type: data.locationType })
+    .select()
+    .single()
+  if (error) return { ok: false, error: error.message }
+  return { ok: true, hotel: created as Hotel }
 }

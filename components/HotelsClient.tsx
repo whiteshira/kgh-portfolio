@@ -1,12 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { useState, useMemo, useCallback } from 'react'
 import { Hotel, ALL_CITIES } from '@/data/hotels'
 import type { Country, Brand, Status } from '@/data/hotels'
-
-const HotelMap = dynamic(() => import('./HotelMapInner'), { ssr: false })
 
 // ── Icons ────────────────────────────────────────────────────
 function IconSearch() {
@@ -317,9 +314,6 @@ export default function HotelsClient({ hotels }: { hotels: Hotel[] }) {
         onClear={() => setFilters(INIT)}
         hasActive={hasActive}
       />
-      <div className="map-section">
-        <HotelMap hotels={filtered} />
-      </div>
       <main className="main">
         <div className="inner">
           <HotelGrid filtered={filtered} />

@@ -32,31 +32,31 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   {
     name: 'Kokotel Bangkok Dheva Thonglor',
     city: 'Bangkok', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/bangkok-dheva-thonglor/',
     facebook: 'https://www.facebook.com/kokotelBangkokThonglor',
   },
   {
     name: 'Kokotel Bangkok Sukhumvit 50',
     city: 'Bangkok', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/bangkok-sukhumvit-50/',
     facebook: 'https://www.facebook.com/kokotelsukhumvit50',
   },
   {
     name: 'Kokotel Bangkok Surawong',
     city: 'Bangkok', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/surawong/',
     facebook: 'https://www.facebook.com/KokotelBangkokSurawong',
   },
   // ── Kokotel Cebu ─────────────────────────────────────────────
   {
     name: 'Kokotel Cebu Adira',
     city: 'Cebu', country: 'Philippines', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/kokotelcebuadira/',
     facebook: 'https://www.facebook.com/kokotelcebuadira',
   },
   {
     name: 'Kokotel Cebu Capitol',
-    city: 'Cebu', country: 'Philippines', brand: 'Kokotel', status: 'open', visible: true,
+    city: 'Cebu', country: 'Philippines', brand: 'Kokotel', status: 'coming_soon', visible: true,
     website: 'https://www.kokotel.com',
     facebook: '',
   },
@@ -64,84 +64,84 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   {
     name: 'Kokotel Chiang Mai Nimman',
     city: 'Chiang Mai', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/chiang-mai-nimman/',
     facebook: 'https://www.facebook.com/KokotelChiangMaiNimman',
   },
   {
     name: 'Kokotel Chiang Rai Airport Suites',
     city: 'Chiang Rai', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/kokotel-chiang-rai-airport-suites/',
     facebook: 'https://www.facebook.com/kokotelchiangraiairportsuites',
   },
   // ── Kokotel Khao Lak ─────────────────────────────────────────
   {
     name: 'Kokotel Khao Lak Isara Casa',
     city: 'Khao Lak', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/kokotel-khao-lak-isara-casa/',
     facebook: 'https://www.facebook.com/p/Kokotel-Khao-Lak-Isara-Casa-61567472665960',
   },
   {
     name: 'Kokotel Khao Lak Lighthouse',
     city: 'Khao Lak', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/khao-lak-lighthouse/',
     facebook: 'https://www.facebook.com/kokotelkhaolaklighthouse',
   },
   {
     name: 'Kokotel Khao Lak Montana',
     city: 'Khao Lak', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/khao-lak-montana/',
     facebook: 'https://www.facebook.com/kokotelkhaolakmontana',
   },
   {
     name: 'Kokotel Khao Lak Seascape',
     city: 'Khao Lak', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/khao-lak-seascape/',
     facebook: 'https://www.facebook.com/kokotelseascape',
   },
   // ── Kokotel Krabi ────────────────────────────────────────────
   {
     name: 'Kokotel Krabi Ao Nang',
     city: 'Krabi', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/krabi-ao-nang/',
     facebook: 'https://www.facebook.com/KokotelKrabiAoNang',
   },
   {
     name: 'Kokotel Krabi Oasis',
     city: 'Krabi', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/krabi-oasis/',
     facebook: 'https://www.facebook.com/KokotelKrabiOasis',
   },
   // ── Kokotel Pattaya ──────────────────────────────────────────
   {
     name: 'Kokotel Pattaya North Beach',
     city: 'Pattaya', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/kokotel-pattaya-north-beach/',
     facebook: 'https://www.facebook.com/p/Kokotel-Pattaya-North-Beach-61562997584076',
   },
   {
     name: 'Kokotel Pattaya South Beach',
     city: 'Pattaya', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/pattaya-south-beach/',
     facebook: 'https://www.facebook.com/kokotelpattayasouthbeach',
   },
   // ── Kokotel Phuket ───────────────────────────────────────────
   {
     name: 'Kokotel Phuket Nai Yang',
     city: 'Phuket', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/phuket-nai-yang/',
     facebook: 'https://www.facebook.com/kokotelphuketnaiyang',
   },
   {
     name: 'Kokotel Phuket Patong',
     city: 'Phuket', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/phuket-patong/',
     facebook: 'https://www.facebook.com/KokotelPhuketPatong',
   },
   // ── Kokotel Rayong ───────────────────────────────────────────
   {
     name: 'Kokotel Rayong Beachfront',
     city: 'Rayong', country: 'Thailand', brand: 'Kokotel', status: 'open', visible: true,
-    website: 'https://www.kokotel.com',
+    website: 'https://www.kokotel.com/rayong-beachfront/',
     facebook: 'https://www.facebook.com/KokotelRayongBeachfront',
   },
   // ── Independent – Thailand ───────────────────────────────────
@@ -153,20 +153,20 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   },
   {
     name: 'AVA SEA Krabi Resort',
-    city: 'Krabi', country: 'Thailand', brand: 'Independent', status: 'coming_soon', visible: true,
+    city: 'Krabi', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
     website: 'https://www.avaseakrabi.com/',
     facebook: 'https://www.facebook.com/avasearesort',
   },
   {
     name: 'Blue Neptuna Hotel Patong',
-    city: 'Phuket', country: 'Thailand', brand: 'Independent', status: 'coming_soon', visible: true,
-    website: 'https://www.booking.com/hotel/th/orngaerm-enpthuunaa.html',
+    city: 'Phuket', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
+    website: 'https://www.booking.com/hotel/th/orngaerm-enpthuunaa.html?aid=356980',
     facebook: '',
   },
   {
     name: 'Cubic Pratunam',
-    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
-    website: 'https://www.booking.com/hotel/th/cubic-pratunam.html',
+    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: false,
+    website: 'https://www.booking.com/hotel/th/cubic-pratunam.html?aid=356980',
     facebook: 'https://www.facebook.com/cubicpratunam',
   },
   {
@@ -195,7 +195,7 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   },
   {
     name: 'Nidhra Boutique Hotel Bangkok',
-    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
+    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: false,
     website: 'https://nidhraboutique.com',
     facebook: 'https://www.facebook.com/nidhrabangkok',
   },
@@ -207,7 +207,7 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   },
   {
     name: 'Rose Apple Hotel',
-    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
+    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: false,
     website: 'https://roseapplehotel.com',
     facebook: 'https://www.facebook.com/roseapplehotel',
   },
@@ -225,20 +225,20 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   },
   {
     name: 'Sea Side Ao Nang Krabi',
-    city: 'Krabi', country: 'Thailand', brand: 'Independent', status: 'coming_soon', visible: false,
-    website: 'https://www.booking.com/hotel/th/sea-side-the-landmark-krabi-ao-nang-beach.html',
+    city: 'Krabi', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
+    website: 'https://www.booking.com/hotel/th/sea-side-the-landmark-krabi-ao-nang-beach.html?aid=318615',
     facebook: 'https://www.facebook.com/profile.php?id=61575267752107',
   },
   {
     name: 'Spittze Hotel Pratunam',
-    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
-    website: 'https://www.booking.com/hotel/th/spitze.html',
+    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: false,
+    website: 'https://www.booking.com/hotel/th/spitze.html?aid=356980',
     facebook: 'https://www.facebook.com/spittzehotel',
   },
   {
     name: 'Tatami Hotel Phuket',
     city: 'Phuket', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
-    website: 'https://www.booking.com/hotel/th/tatami-phuket.html',
+    website: 'https://www.booking.com/hotel/th/tatami-phuket.html?aid=356980',
     facebook: 'https://www.facebook.com/people/Tatami-Hotel/61576671947434',
   },
   {
@@ -261,14 +261,14 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   },
   {
     name: 'Travelier Hostel',
-    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
-    website: 'https://www.booking.com/hotel/th/travelier-hostel.en-gb.html',
+    city: 'Bangkok', country: 'Thailand', brand: 'Independent', status: 'open', visible: false,
+    website: 'https://www.booking.com/hotel/th/travelier-hostel.en-gb.html?aid=311984',
     facebook: 'https://www.facebook.com/travelierhostel',
   },
   {
     name: 'V Style Boutique Hotel',
-    city: 'Pattaya', country: 'Thailand', brand: 'Independent', status: 'open', visible: true,
-    website: 'https://www.booking.com/hotel/th/v-style-boutique.html',
+    city: 'Pattaya', country: 'Thailand', brand: 'Independent', status: 'open', visible: false,
+    website: 'https://www.booking.com/hotel/th/v-style-boutique.html?aid=318615',
     facebook: 'https://www.facebook.com/profile.php?id=61582355910546',
   },
   {
@@ -292,7 +292,7 @@ const raw: Omit<Hotel, 'id' | 'locationType'>[] = [
   },
   {
     name: 'Mangrove Place and Residences',
-    city: 'Cebu', country: 'Philippines', brand: 'Independent', status: 'coming_soon', visible: false,
+    city: 'Cebu', country: 'Philippines', brand: 'Independent', status: 'open', visible: true,
     website: 'https://mangroveplaceresidences.com/',
     facebook: 'https://www.facebook.com/p/Mangrove-Place-and-Residences-Mactan-61554477525930',
   },

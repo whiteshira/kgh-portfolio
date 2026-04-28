@@ -253,14 +253,24 @@ function Footer() {
         <p className="footer__copy">
           © {new Date().getFullYear()} Koko Global Hospitality Co., Ltd.
         </p>
-        <a
-          className="footer__link"
-          href="https://www.kokoglobalhospitality.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          kokoglobalhospitality.com
-        </a>
+        <div className="footer__contact">
+          <div className="footer__links">
+            <a className="footer__link" href="https://www.kokoglobalhospitality.com/" target="_blank" rel="noopener noreferrer">
+              kokoglobalhospitality.com
+            </a>
+            <a className="footer__link" href="https://www.kokotel.com/" target="_blank" rel="noopener noreferrer">
+              kokotel.com
+            </a>
+          </div>
+          <div className="footer__links">
+            <a className="footer__link" href="mailto:sales@kokoglobalhospitality.com">
+              sales@kokoglobalhospitality.com
+            </a>
+            <a className="footer__link" href="tel:+6620263218">
+              +66-2-026-3218
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   )
